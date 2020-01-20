@@ -1,0 +1,15 @@
+<div>
+	<h2>
+		<a href="https://github.com/DethAriel/ng-recaptcha"><code>ng-recaptcha</code></a> demo plunk (<code>@angular: {{version}}</code>)</h2>
+
+  <button (click)="disabled = !disabled">Disable captcha</button>
+
+  <div *ngIf="disabled">
+    <h3>Invisible CAPTCHA</h3>
+    <re-captcha size="invisible" #invisible (resolved)="response = $event"></re-captcha>
+    <button (click)="invisible.execute()">Execute</button>
+    <button (click)="invisible.reset()">Reset</button>
+    <h4>Invisible captcha response</h4>
+    <pre>{{ response || '[empty]' }}</pre>
+  </div>
+</div>
